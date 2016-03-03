@@ -1,0 +1,394 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Address
+ *
+ * @ORM\Table(name="address")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\AddressRepository")
+ */
+class Address
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Name", type="string", length=255)
+     */
+    private $name;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="City", type="string", length=255)
+     */
+    private $city;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="CountryName", type="string", length=255)
+     */
+    private $countryName;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="PostalCode", type="string", length=255)
+     */
+    private $postalCode;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="FaxNumber", type="string", length=255)
+     */
+    private $faxNumber;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Email", type="string", length=255)
+     */
+    private $email;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Organization", type="string", length=255)
+     */
+    private $organization;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="MemberId", type="string", length=255)
+     */
+    private $memberId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="NumeroVoie", type="string", length=255)
+     */
+    private $numeroVoie;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Voie", type="string", length=255)
+     */
+    private $voie;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="siret", type="string", length=255)
+     */
+    private $siret;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="PhoneNumber", type="string", length=255)
+     */
+    private $phoneNumber;
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     * @return Address
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string 
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set city
+     *
+     * @param string $city
+     * @return Address
+     */
+    public function setCity($city)
+    {
+        $this->city = $city;
+
+        return $this;
+    }
+
+    /**
+     * Get city
+     *
+     * @return string 
+     */
+    public function getCity()
+    {
+        return $this->city;
+    }
+
+    /**
+     * Set countryName
+     *
+     * @param string $countryName
+     * @return Address
+     */
+    public function setCountryName($countryName)
+    {
+        $this->countryName = $countryName;
+
+        return $this;
+    }
+
+    /**
+     * Get countryName
+     *
+     * @return string 
+     */
+    public function getCountryName()
+    {
+        return $this->countryName;
+    }
+
+    /**
+     * Set postalCode
+     *
+     * @param string $postalCode
+     * @return Address
+     */
+    public function setPostalCode($postalCode)
+    {
+        $this->postalCode = $postalCode;
+
+        return $this;
+    }
+
+    /**
+     * Get postalCode
+     *
+     * @return string 
+     */
+    public function getPostalCode()
+    {
+        return $this->postalCode;
+    }
+
+    /**
+     * Set faxNumber
+     *
+     * @param string $faxNumber
+     * @return Address
+     */
+    public function setFaxNumber($faxNumber)
+    {
+        $this->faxNumber = $faxNumber;
+
+        return $this;
+    }
+
+    /**
+     * Get faxNumber
+     *
+     * @return string 
+     */
+    public function getFaxNumber()
+    {
+        return $this->faxNumber;
+    }
+
+    /**
+     * Set email
+     *
+     * @param string $email
+     * @return Address
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * Get email
+     *
+     * @return string 
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Set organization
+     *
+     * @param string $organization
+     * @return Address
+     */
+    public function setOrganization($organization)
+    {
+        $this->organization = $organization;
+
+        return $this;
+    }
+
+    /**
+     * Get organization
+     *
+     * @return string 
+     */
+    public function getOrganization()
+    {
+        return $this->organization;
+    }
+
+    /**
+     * Set memberId
+     *
+     * @param string $memberId
+     * @return Address
+     */
+    public function setMemberId($memberId)
+    {
+        $this->memberId = $memberId;
+
+        return $this;
+    }
+
+    /**
+     * Get memberId
+     *
+     * @return string 
+     */
+    public function getMemberId()
+    {
+        return $this->memberId;
+    }
+
+    /**
+     * Set numeroVoie
+     *
+     * @param string $numeroVoie
+     * @return Address
+     */
+    public function setNumeroVoie($numeroVoie)
+    {
+        $this->numeroVoie = $numeroVoie;
+
+        return $this;
+    }
+
+    /**
+     * Get numeroVoie
+     *
+     * @return string 
+     */
+    public function getNumeroVoie()
+    {
+        return $this->numeroVoie;
+    }
+
+    /**
+     * Set voie
+     *
+     * @param string $voie
+     * @return Address
+     */
+    public function setVoie($voie)
+    {
+        $this->voie = $voie;
+
+        return $this;
+    }
+
+    /**
+     * Get voie
+     *
+     * @return string 
+     */
+    public function getVoie()
+    {
+        return $this->voie;
+    }
+
+    /**
+     * Set siret
+     *
+     * @param string $siret
+     * @return Address
+     */
+    public function setSiret($siret)
+    {
+        $this->siret = $siret;
+
+        return $this;
+    }
+
+    /**
+     * Get siret
+     *
+     * @return string 
+     */
+    public function getSiret()
+    {
+        return $this->siret;
+    }
+
+    /**
+     * Set phoneNumber
+     *
+     * @param string $phoneNumber
+     * @return Address
+     */
+    public function setPhoneNumber($phoneNumber)
+    {
+        $this->phoneNumber = $phoneNumber;
+
+        return $this;
+    }
+
+    /**
+     * Get phoneNumber
+     *
+     * @return string 
+     */
+    public function getPhoneNumber()
+    {
+        return $this->phoneNumber;
+    }
+}

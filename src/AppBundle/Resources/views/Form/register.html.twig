@@ -1,0 +1,19 @@
+{# src/AppBundle/Resources/views/Form/register.html.twig #}
+
+{% extends "AppBundle::base.html.twig" %}
+
+{% block title %}Connection{% endblock %}
+
+{# ... you will probably extends your base template, like layout.html.twig #}
+
+{% block body %}
+
+{# {{form(createUserForm)}} #}
+ {{ form_start(createUserForm) }}
+    {{ form_row(createUserForm.email) }}
+    {{ form_row(createUserForm.password.first) }}
+    {{ form_row(createUserForm.password.second) }}
+
+{{ form_end(createUserForm) }}
+
+{% endblock %}
