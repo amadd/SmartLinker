@@ -1,0 +1,49 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="Member")
+ * @ORM\InheritanceType("SINGLE_TABLE")
+ * @ORM\DiscriminatorColumn(name="type", type="string")
+ * @ORM\DiscriminatorMap( {"organization" = "Organization", "contact" = "Contact"} )
+ */
+class Member
+{
+  /**
+  * @var int
+  *
+  * @ORM\Column(name="id", type="integer")
+  * @ORM\Id
+  * @ORM\GeneratedValue(strategy="AUTO")
+  */
+  private $id;
+
+  /**
+  * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Address")
+  */
+  private $address;
+
+  /**
+  * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Phone")
+  */
+  private $phone;
+
+  /**
+  * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Email")
+  */
+  private $email;
+
+  /**
+  * Get id
+  *
+  * @return integer
+  */
+  public function getId()
+  {
+    return $this->id;
+  }
+}
