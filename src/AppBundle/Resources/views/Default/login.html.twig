@@ -1,0 +1,38 @@
+{# src/AppBundle/Resources/views/Form/login.html.twig #}
+
+{% extends "AppBundle::base.html.twig" %}
+
+{% block title %}Connection{% endblock %}
+
+{% block body %}
+
+{% if error %}
+    <div>{{ "Erreur lors de la connexion" }}</div>
+    {{ error }}
+{% endif %}
+
+{% if app.user and is_granted("ROLE_USER") or is_granted("ROLE_ADMIN") %}
+    <p>Vous êtes déjà connecté</p>
+    <a href=" {{ path('catalogue') }} ">Retour au catalogue</a>
+
+{% else %}
+<div id="log-div">
+    <form action="{{ path('fos_user_security_check') }}" method="post" class="form-signin">
+        <label class="label" for="_username">Username:</label>
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+        <input type="text" id="username" name="_username" value="{{ last_username }}" class="form-control"/>
+
+        <label class="label" for="_password">Password:</label>
+        <input type="password" id="password" name="_password" class="form-control"/>
+
+        {#
+            If you want to control the URL the user
+            is redirected to on success (more details below)
+            <input type="hidden" name="_target_path" value="/account" />
+        #}
+
+        <button type="_submit" id="_submit" name="_submit" class="btn btn-lg btn-primary btn-block">login</button>
+    </form>
+</div>
+{% endif %}
+{% endblock %}

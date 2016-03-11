@@ -87,7 +87,7 @@ class Projet
     /**
      * @var string
      *
-     * @ORM\Column(name="Client_Id", type="string", length=255)
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Organization")
      */
     private $clientId;
 
@@ -95,7 +95,7 @@ class Projet
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -118,7 +118,7 @@ class Projet
     /**
      * Get demandeur
      *
-     * @return string 
+     * @return string
      */
     public function getDemandeur()
     {
@@ -141,7 +141,7 @@ class Projet
     /**
      * Get dateEligibilite
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getDateEligibilite()
     {
@@ -164,7 +164,7 @@ class Projet
     /**
      * Get reference
      *
-     * @return string 
+     * @return string
      */
     public function getReference()
     {
@@ -187,7 +187,7 @@ class Projet
     /**
      * Get gestionDeProjet
      *
-     * @return string 
+     * @return string
      */
     public function getGestionDeProjet()
     {
@@ -210,7 +210,7 @@ class Projet
     /**
      * Get serviceAccountManager
      *
-     * @return string 
+     * @return string
      */
     public function getServiceAccountManager()
     {
@@ -233,7 +233,7 @@ class Projet
     /**
      * Get createDate
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getCreateDate()
     {
@@ -256,7 +256,7 @@ class Projet
     /**
      * Get modifiedDate
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getModifiedDate()
     {
@@ -279,7 +279,7 @@ class Projet
     /**
      * Get createdBy
      *
-     * @return string 
+     * @return string
      */
     public function getCreatedBy()
     {
@@ -302,33 +302,10 @@ class Projet
     /**
      * Get modifiedBy
      *
-     * @return string 
+     * @return string
      */
     public function getModifiedBy()
     {
         return $this->modifiedBy;
-    }
-
-    /**
-     * Set clientId
-     *
-     * @param string $clientId
-     * @return Projet
-     */
-    public function setClientId($clientId)
-    {
-        $this->clientId = $clientId;
-
-        return $this;
-    }
-
-    /**
-     * Get clientId
-     *
-     * @return string 
-     */
-    public function getClientId()
-    {
-        return $this->clientId;
     }
 }
