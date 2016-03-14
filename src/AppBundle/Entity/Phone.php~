@@ -66,27 +66,4 @@ class Phone
     {
         return $this->number;
     }
-
-    /**
-     * Set member
-     *
-     * @param \AppBundle\Entity\Member $member
-     * @return Phone
-     */
-    public function setMember(\AppBundle\Entity\Member $member = null)
-    {
-        $this->member = $member;
-
-        return $this;
-    }
-
-    /**
-     * Get member
-     *
-     * @return \AppBundle\Entity\Member 
-     */
-    public function getMember()
-    {
-        return $this->member;
-    }
 }

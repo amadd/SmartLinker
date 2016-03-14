@@ -52,21 +52,21 @@ class Address
     /**
      * @var string
      *
-     * @ORM\Column(name="FaxNumber", type="string", length=255, nullable=true)
+     * @ORM\Column(name="FaxNumber", type="string", length=255)
      */
     private $faxNumber;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="Email", type="string", length=255, nullable=true)
+     * @ORM\Column(name="Email", type="string", length=255)
      */
     private $email;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="NumeroVoie", type="string", length=255, nullable=true)
+     * @ORM\Column(name="NumeroVoie", type="string", length=255)
      */
     private $numeroVoie;
 
@@ -87,7 +87,7 @@ class Address
     /**
      * @var string
      *
-     * @ORM\Column(name="PhoneNumber", type="string", length=255, nullable=true)
+     * @ORM\Column(name="PhoneNumber", type="string", length=255)
      */
     private $phoneNumber;
 
@@ -97,7 +97,7 @@ class Address
     private $liaison;
 
     /**
-    * @ORM\OneToOne(targetEntity="AppBundle\Entity\Member")
+    * @ORM\OneToOne(targetEntity="AppBundle\Entity\member")
     */
     private $member;
 
@@ -357,7 +357,7 @@ class Address
     /**
      * Get liaison
      *
-     * @return \AppBundle\Entity\Liaison
+     * @return \AppBundle\Entity\Liaison 
      */
     public function getLiaison()
     {
@@ -380,7 +380,7 @@ class Address
     /**
      * Get member
      *
-     * @return \AppBundle\Entity\member
+     * @return \AppBundle\Entity\member 
      */
     public function getMember()
     {
